@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vroum-vroum - Location & Vente de Voitures</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1280&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .featured-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ef4444;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+<!-- Navigation -->
+    <nav class="bg-transparent shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <i class="fas fa-car text-2xl text-blue-600 mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800">Vroum-vroum</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="acceuil.html" class="text-gray-600 font-medium">Accueil</a>
+                    <a href="location.html" class="text-gray-600 hover:text-blue-600">Locations</a>
+                    <a href="vente.html" class="text-blue-600 hover:text-blue-600">Ventes</a>
+                    <a href="#proposer" class="text-gray-600 hover:text-blue-600">Proposer une voiture</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-gray-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+<!-- Ventes Section -->
+    <section id="ventes" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-600 mb-2">Voitures à vendre</h2>
+            <p class="text-center text-gray-600 mb-8">Découvrez notre sélection de véhicules d'occasion et neufs</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Vente Card 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Renault Clio" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl text-blue-600 font-bold">Renault Clio</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2018</span>
+                            <span class="text-blue-600 font-bold">12,5Mfrancs CFA</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-black-400">
+                            <span class="text-black-600 font-bold ml-2">Localisation: Adjamé 220</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Essence</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-tachometer-alt mr-1"></i>
+                                <span>60 000 km</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg ">
+                            <i class="fas fa-phone-alt mr-2"></i> Contact: 0000000000                       </button>
+                    </div>
+                </div>
+
+                <!-- Vente Card 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Toyota Yaris" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl text-blue-600 font-bold">Toyota Yaris</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2020</span>
+                            <span class="text-blue-600 font-bold">18M francs CFA</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-black-400">
+                            <span class="text-black-600 font-bold ml-2">Localisation: Treicheville</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Hybride</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-tachometer-alt mr-1"></i>
+                                <span>25 000 km</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contact: 0000000000
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vente Card 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Citroën C3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl text-blue-600 font-bold">Citroën C3</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2019</span>
+                            <span class="text-blue-600 font-bold">14,2M francs CFA</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-black-400">
+                            <span class="text-black-600 font-bold ml-2">Localisation: Cocody </span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Diesel</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-tachometer-alt mr-1"></i>
+                                <span>40 000 km</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contact: 0000000000
+                        </button>
+                    </div>
+                </div>
+                <!-- Vente Card 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Renault Clio" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Renault Clio</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2018</span>
+                            <span class="text-blue-600 font-bold">5Mfrancs CFA</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <span class="text-gray-600 ml-2">(8 avis)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Essence</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-tachometer-alt mr-1"></i>
+                                <span>60 000 km</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contacter le propriétaire
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vente Card 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Toyota Yaris" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Toyota Yaris</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2020</span>
+                            <span class="text-blue-600 font-bold">8Mfrancs CFA</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="text-gray-600 ml-2">(14 avis)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Hybride</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-tachometer-alt mr-1"></i>
+                                <span>25 000 km</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contacter le propriétaire
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vente Card 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Citroën C3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Citroën C3</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2019</span>
+                            <span class="text-blue-600 font-bold">4Mfrancs cfa</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="text-gray-600 ml-2">(10 avis)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Diesel</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-tachometer-alt mr-1"></i>
+                                <span>40 000 km</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contacter le propriétaire
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+            
+            
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vroum-vroum - Location & Vente de Voitures</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1280&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .featured-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ef4444;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <i class="fas fa-car text-2xl text-blue-600 mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800">Vroum-vroum</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="acceuil.html" class="text-gray-600 hover:text-blue-600 ">Accueil</a>
+                    <a href="#locations" class="text-blue-600 font-medium">Locations</a>
+                    <a href="vente.html" class="text-gray-600 hover:text-blue-600">Ventes</a>
+                    <a href="#proposer" class="text-gray-600 hover:text-blue-600">Proposer une voiture</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-gray-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Barre de recherche -->
+  <div class="search-box">
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Rechercher un lieu, une entreprise ou une voiture..." 
+      style="padding: 10px; width: 100%; max-width: 500px; margin-top: 30px; position: absolute;"
+    >
+  </div>
+    <!-- Locations Section -->
+    <section id="locations" class="py-12 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-600 mb-2">Voitures à louer</h2>
+            <p class="text-center text-gray-600 mb-8">Trouvez la voiture parfaite pour votre prochain voyage</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Location Card 1 -->
+                <div class="card bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300 hidden-display-none"  data-info="Mercedes classe c cocody Riviera attoban">
+                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Mercedes Classe C" class="w-full h-48 object-cover">
+                    <div class=" p-4 ">
+                        <h3 class=" text-xl text-blue-600 font-bold">Mercedes Classe C</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2022</span>
+                            <span class="text-blue-600 font-bold">120k/jour</span>
+                        </div>
+                        <div class="flex items-center mt-2 font-bold text-black-400">
+                            <span class="text-black-600 ml-2">Localisation: Cocody Riviera Attoban</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Essence</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-users mr-1"></i>
+                                <span>5 places</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contact: 0000000000
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Location Card 2 -->
+                <div class="card bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300 hidden-display-none" data-info="Peugeot 208 Angré terminus">
+                    <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Peugeot 208" class="w-full h-48 object-cover">
+                    <div class=" p-4">
+                        <h3 class="text-xl text-blue-600 font-bold">Peugeot 208</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2021</span>
+                            <span class="text-blue-600 font-bold">45k/jour</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-black-400">
+                            <span class="text-black-600 font-bold ml-2">Localisation: Angré terminus </span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Électrique</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-users mr-1"></i>
+                                <span>4 places</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contact: 0000000000
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Location Card 3 -->
+                <div class="card bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300 hidden-display-none" data-info="Range rover evoque Yopougon Toit rouge">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Range Rover Evoque" class="w-full h-48 object-cover">
+                    <div class="p-4" >
+                        <h3 class=" text-xl text-blue-600 font-bold">Range Rover Evoque</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2020</span>
+                            <span class="text-blue-600 font-bold">150k/jour</span>
+                        </div>
+                        <div class="flex items-center mt-2 font-bold text-black-400">
+                            <span class="text-black-600 ml-2">Localisation: Yopougon Toit rouge </span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Diesel</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-users mr-1"></i>
+                                <span>5 places</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contact: 000000000
+                        </button>
+                    </div>
+                </div>
+            </div>
+             <h2 class="text-3xl font-bold text-center mb-2">...</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Location Card 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Mercedes Classe C" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Mercedes Classe C</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2022</span>
+                            <span class="text-blue-600 font-bold">120k/jour</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="text-gray-600 ml-2">(15 avis)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Essence</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-users mr-1"></i>
+                                <span>5 places</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contacter le propriétaire
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Location Card 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Peugeot 208" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Peugeot 208</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2021</span>
+                            <span class="text-blue-600 font-bold">45k/jour</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="text-gray-600 ml-2">(22 avis)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Électrique</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-users mr-1"></i>
+                                <span>4 places</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contacter le propriétaire
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Location Card 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Range Rover Evoque" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Range Rover Evoque</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2020</span>
+                            <span class="text-blue-600 font-bold">150k/jour</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="text-gray-600 ml-2">(12 avis)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Diesel</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-users mr-1"></i>
+                                <span>5 places</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contacter le propriétaire
+                        </button>
+                    </div>
+                </div>
+            </div>
+             <h2 class="text-3xl font-bold text-center mb-2">...</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Location Card 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Mercedes Classe C" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Mercedes Classe C</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2022</span>
+                            <span class="text-blue-600 font-bold">120k/jour</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="text-gray-600 ml-2">(15 avis)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Essence</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-users mr-1"></i>
+                                <span>5 places</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contacter le propriétaire
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Location Card 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Peugeot 208" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Peugeot 208</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2021</span>
+                            <span class="text-blue-600 font-bold">45k/jour</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="text-gray-600 ml-2">(22 avis)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Électrique</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-users mr-1"></i>
+                                <span>4 places</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contacter le propriétaire
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Location Card 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Range Rover Evoque" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Range Rover Evoque</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2020</span>
+                            <span class="text-blue-600 font-bold">150k/jour</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="text-gray-600 ml-2">(12 avis)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Diesel</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-users mr-1"></i>
+                                <span>5 places</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contacter le propriétaire
+                        </button>
+                    </div>
+                </div>
+            </div>
+             <h2 class="text-3xl font-bold text-center mb-2">...</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Location Card 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Mercedes Classe C" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Mercedes Classe C</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2022</span>
+                            <span class="text-blue-600 font-bold">120k/jour</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="text-gray-600 ml-2">(15 avis)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Essence</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-users mr-1"></i>
+                                <span>5 places</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contacter le propriétaire
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Location Card 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Peugeot 208" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Peugeot 208</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2021</span>
+                            <span class="text-blue-600 font-bold">45k/jour</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="text-gray-600 ml-2">(22 avis)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Électrique</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-users mr-1"></i>
+                                <span>4 places</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contacter le propriétaire
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Location Card 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Range Rover Evoque" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Range Rover Evoque</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2020</span>
+                            <span class="text-blue-600 font-bold">150k/jour</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="text-gray-600 ml-2">(12 avis)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Diesel</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-users mr-1"></i>
+                                <span>5 places</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contacter le propriétaire
+                        </button>
+                    </div>
+                </div>
+            </div>
+             <h2 class="text-3xl font-bold text-center mb-2">...</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Location Card 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Mercedes Classe C" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Mercedes Classe C</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2022</span>
+                            <span class="text-blue-600 font-bold">120k/jour</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="text-gray-600 ml-2">(15 avis)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Essence</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-users mr-1"></i>
+                                <span>5 places</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contacter le propriétaire
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Location Card 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Peugeot 208" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Peugeot 208</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2021</span>
+                            <span class="text-blue-600 font-bold">45k/jour</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="text-gray-600 ml-2">(22 avis)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Électrique</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-users mr-1"></i>
+                                <span>4 places</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contacter le propriétaire
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Location Card 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md car-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Range Rover Evoque" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Range Rover Evoque</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-600">2020</span>
+                            <span class="text-blue-600 font-bold">150k/jour</span>
+                        </div>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="text-gray-600 ml-2">(12 avis)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-gas-pump mr-1"></i>
+                                <span>Diesel</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-users mr-1"></i>
+                                <span>5 places</span>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contacter le propriétaire
+                        </button>
+                    </div>
+                </div>
+            </div>
+     <script>
+    const searchInput = document.getElementById("searchInput");
+
+    searchInput.addEventListener("keyup", function() {
+      const filter = searchInput.value.toLowerCase().trim();
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach(card => {
+        const data = card.getAttribute("data-info");
+        
+        if (filter === "") {
+          // Si la barre est vide, tout réapparaît
+          card.classList.remove("hidden");
+        } else if (data.includes(filter)) {
+          // Si correspondance → garder visible
+          card.classList.remove("hidden");
+        } else {
+          // Sinon → rendre invisible
+          card.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
